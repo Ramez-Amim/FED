@@ -16,13 +16,13 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
   <summary>uitwerken voor kick-off werkgroep</summary>
 
   ### Auteur:
-  Ramez Amim (vervangen door jouw naam)
+  Ramez Amim 
 
   #### Je startniveau:
-  Blauw (kies uit zwart, rood óf blauw)
+  Blauw 
 
   #### Je focus:
-  Responsive (kies uit responsive óf surface plane)
+  Responsive 
  
 </details>
 
@@ -110,10 +110,9 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
   ### Verslag van meeting
   hier na afloop snel de uitkomsten van de meeting vastleggen
 
-  - punt 1
-  - punt 2
-  - nog een punt
-  - ...
+  - In het algemeen ziet het er goed uit als begin. Let erop dat je een goede keuze maakt voor de H1 op de pagina, want op de Nike-homepagina is die nu een beetje onduidelijk. Als de H1 niet goed uitkomt, kun je er eventueel voor kiezen om hem hidden te maken.
+  Misschien kun je ook wat sections samenvoegen, vooral rond de footer. Voeg daarnaast nog wat meer context toe over de WCAG-test: wat je getest hebt, waarom, en wat de resultaten waren.
+  Voor nu is het "een goede start!" 
 
 </details>
 
@@ -235,8 +234,9 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
   Nb. ChatGpT en andere AI horen er ook bij.
   Nb. Vermeld de bronnen ook in je code.
 
-  1. bron 1
-  2. bron 2
-  3. ...
+  1. https://www.a11yproject.com/posts/how-to-hide-content/ - om iets hidden te maken
+  2. https://chromewebstore.google.com/detail/image-downloader/cnpniohnfphhjihaiiggeabnkjhpaldj - om afbeeldingen van de website te downloaden
+  3. Ai gebruikt om de code mooi te laten inspringen met de prompt: "kun je deze code mooi laten inspringen ik heb hier moeite mee"
+  
 
 </details>
