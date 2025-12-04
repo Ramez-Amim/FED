@@ -1,0 +1,191 @@
+/* ========== CUSTOM FONTS (bron: ChatGPT) ========== */
+
+/* Helvetica Now Text Regular */
+@font-face {
+    font-family: "HelveticaNowText";
+    src: url("fonts/HelveticaNowText.woff2") format("woff2");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Helvetica Now Text Medium */
+@font-face {
+    font-family: "HelveticaNowText";
+    src: url("fonts/HelveticaNowTextMedium.woff2") format("woff2");
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Helvetica Now Display Medium (voor headings) */
+@font-face {
+    font-family: "HelveticaNowDisplay";
+    src: url("fonts/HelveticaNowDisplayMedium.woff2") format("woff2");
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Nike Futura (voor logo-styling en buttons) */
+@font-face {
+    font-family: "NikeFutura";
+    src: url("fonts/Nike-Futura.woff2") format("woff2");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: system-ui, sans-serif;
+}
+
+/* ========== NAVIGATION ========== */
+
+/* De hele header */
+header {
+    position: fixed;      /* header blijft bovenaan plakken */
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: white;
+    border-bottom: 1px solid #e5e5e5;
+    z-index: 999;
+    padding: 0.5rem 1rem; 
+}
+
+/* De lijst van logo + iconen */
+header nav ul {
+    list-style: none;
+    display: flex;                  
+    align-items: center;
+}
+
+/* LOGO (eerste li) moet links blijven */
+header nav ul li:first-child {
+    margin-right: auto;
+}
+
+/* ========== ICON FORMATS ========== */
+
+/* LOGO grootte */
+header nav ul li:first-child img {
+    height: 50px;   /* Nike gebruikt ± 28px op mobiel */
+    width: auto;
+}
+
+/* ICONEN grootte */
+header nav ul li:not(:first-child) img {
+    height: 20px;   /* Nike iconen zijn 18–20px */
+    width: auto;
+}
+
+/* Ruimte tussen iconen */
+header nav ul li:not(:first-child) {
+    margin-left: 1rem;
+}
+
+/* ===== HERO BASIS ===== */
+main section:first-of-type {
+    position: relative;
+    margin-top: 60px; /* ruimte voor fixed nav */
+}
+
+/* VIDEO VOLLEDIG VULLEN ZONDER ZWARTE RANDEN */
+main section:first-of-type video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;   
+    z-index: -1;         
+}
+
+
+main section:first-of-type {
+    height: 90vh;       
+    position: relative;
+    overflow: hidden;    
+}
+
+
+/* H1 verbergen maar wel toegankelijk houden */
+main section:first-of-type h1 {
+    position: absolute;
+    left: -9999rem;
+}
+
+/* ===== OVERLAY TEKST & KNOPPEN ===== */
+
+/* Grote zichtbare titel (H2) */
+main section:first-of-type h2 {
+    position: absolute;
+    left: 50%;
+    top: 55%;
+    transform: translateX(-50%);
+    width: 90%;
+    color: white;
+    text-align: center;
+    font-size: 5em;      
+    font-weight: 900;
+}
+
+/* Ondertekst (p) */
+main section:first-of-type p {
+    position: absolute;
+    left: 50%;
+    top: 70%;
+    transform: translateX(-50%);
+    width: 90%;
+    color: white;
+    text-align: center;
+    font-size: 2em;
+    font-weight: 400;
+}
+
+/* Knoppen-container (ul) */
+main section:first-of-type ul {
+    position: absolute;
+    left: 50%;
+    top: 80%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Knoppen zelf */
+main section:first-of-type ul li a {
+    background: white;
+    color: black;
+    padding: 0.7rem 1.4rem;
+    border-radius: 2rem;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 600;
+    display: inline-block;
+}
+
+
+/* Pauzeknop rechtsonder */
+main section:first-of-type button:last-of-type {
+    position: absolute;
+    right: 1rem;
+    bottom: 1rem;
+    background: rgba(255,255,255,0.8);
+    padding: 0.5rem 1.2rem;
+    border-radius: 2rem;
+}
+
+
