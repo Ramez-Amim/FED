@@ -1,128 +1,271 @@
 <!DOCTYPE html>
 <html lang="nl">
-    
-<head>
-    <meta charset="UTF-8">
-    <meta name="author" content="Ramez Amim">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="author" content="Ramez Amim" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Nike | Nieuwe Releases</title>
-    <link href="style.css" rel="stylesheet">
-    <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
-</head>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="images/nikelogo.png" />
+  </head>
 
-<body>
-    
+  <body class="releases">
+    <!-- =============================================== -->
+    <!-- HEADER / NAV (zelfde als pagina 1)            -->
+    <!-- =============================================== -->
     <header>
-        <nav>
-            <ul>
-                <li><a href="index.html"><img src="#" alt="Nike Logo"></a></li>
-                <li><button aria-label="Zoeken">Zoeken</button></li>
-                <li><a href="account.html" aria-label="Account">Account</a></li>
-                <li><a href="winkelmandje.html" aria-label="Winkelmandje">Winkelmandje</a></li>
-                <li><button aria-label="Menu">Menu</button></li>
+      <nav>
+        <ul class="nav">
+          <!-- LOGO -->
+          <li class="nav-logo">
+            <a href="index.html">
+              <img src="images/nikelogo.png" alt="Nike Logo" />
+            </a>
+          </li>
+
+          <!-- MIDDEN MENU -->
+          <li class="nav-center">
+            <ul class="nav-links">
+              <li class="has-dropdown">
+                <a href="nieuw.html">Nieuw</a>
+
+                <!-- DROPDOWN -->
+                <ul class="dropdown">
+                  <li><a href="nieuw.html">Shop alle nieuwe producten</a></li>
+                  <li><a href="#">Bestsellers</a></li>
+                  <li><a href="#">Introductiekalender SNKRS</a></li>
+                  <li><a href="#">Beste voor de winter</a></li>
+                </ul>
+              </li>
             </ul>
-        </nav>
+          </li>
+
+          <!-- ICONS RECHTS -->
+          <li class="nav-icons">
+            <button aria-label="Zoeken">
+              <img src="images/zoekicoon.png" alt="zoekicoon" />
+            </button>
+
+            <a href="account.html" aria-label="Account">
+              <img src="images/accounticoon.png" alt="accounticoon" />
+            </a>
+
+            <a href="winkelmandje.html" aria-label="Winkelmandje">
+              <img src="images/winkelmandjeicoon.png" alt="winkelmandjeicoon" />
+            </a>
+
+            <button aria-label="Menu">
+              <img src="images/hamburgermenu.png" alt="hamburgermenuicoon" />
+            </button>
+          </li>
+        </ul>
+      </nav>
     </header>
 
+    <!-- =============================================== -->
+    <!-- SUBNAV (grijze balk onder de nav)             -->
+    <!-- =============================================== -->
+    <section class="subnav">
+      <p>Shop alle nieuwe producten</p>
+    </section>
+
+    <!-- =============================================== -->
+    <!-- MAIN                                          -->
+    <!-- =============================================== -->
     <main>
-        
-        <section>
-            <h1>Nieuwe Releases</h1>
-            <p>300 Resultaten</p> <ul>
-                <li><button>Filter</button></li>
-                <li><button>Schoenen</button></li>
-                <li><button>Tops en T-shirts</button></li>
-            </ul>
-        </section>
+      <!-- =========================================== -->
+      <!-- TOPBAR                                     -->
+      <!-- =========================================== -->
+      <section class="releases-top">
+        <div>
+          <h1>Nieuwe releases</h1>
+          <p>300 resultaten</p>
+        </div>
 
+        <div class="releases-actions">
+          <button id="toggleFilters" type="button">Verberg filters</button>
+        </div>
+      </section>
 
-        <section>
-            
-            <article>
-                <a href="product-detail-1.html">
-                    <img src="AIR+JORDAN+5+RETRO+OG.jpeg" alt="Air Jordan 5 Retro 'Medium Soft Pink'">
-                    <h2>Air Jordan 5 Retro 'Medium Soft Pink'</h2>
-                </a>
-                <h3>Herenschoenen</h3>
-                <p>1 kleur</p>
-                <h4>€ 209,99</h4>
-            </article>
+      <!-- =========================================== -->
+      <!-- LAYOUT: FILTERS + PRODUCTEN               -->
+      <!-- =========================================== -->
+      <section class="releases-layout">
+        <!-- FILTERS -->
+        <aside id="filters" aria-label="Filters">
+          <h2>Filters</h2>
 
-            <article>
-                <a href="product-detail-2.html">
-                    <img src="NIKE+AIR+MAX+95+BIG+BUBBLE.jpeg" alt="Nike Air Max 95 Big Bubble in donkerblauw">
-                    <h2>Nike Air Max 95 Big Bubble</h2>
-                </a>
-                <h3>Herenschoenen</h3>
-                <p>1 kleur</p>
-                <h4>€ 189,99</h4>
-            </article>
-            
-        </section>
-        
-        <section>
-            <h2>Gerelateerde categorieën</h2>
+          <!-- SNELCATEGORIEËN -->
+          <ul>
+            <li><button type="button">Schoenen</button></li>
+            <li><button type="button">Tops en T-shirts</button></li>
+            <li><button type="button">Broeken & tights</button></li>
+            <li><button type="button">Accessoires en gear</button></li>
+            <li><button type="button">Jassen en bodywarmers</button></li>
+            <li><button type="button">Hoodies en sweatshirts</button></li>
+            <li><button type="button">Trainingspakken</button></li>
+            <li><button type="button">Compressie en basislaag</button></li>
+            <li><button type="button">Sokken</button></li>
+          </ul>
+
+          <!-- UITKLAPFILTERS (DETAILS / SUMMARY) -->
+          <details>
+            <summary>Geslacht</summary>
             <ul>
-                <li><a href="#">Populaire voetbalschoenen</a></li>
-                <li><a href="#">Nieuwe jongensschoenen</a></li>
+              <li><label><input type="checkbox" /> Heren</label></li>
+              <li><label><input type="checkbox" /> Dames</label></li>
             </ul>
-        </section>
+          </details>
 
+          <details>
+            <summary>Kleur</summary>
+            <ul>
+              <li><label><input type="checkbox" /> Zwart</label></li>
+              <li><label><input type="checkbox" /> Wit</label></li>
+            </ul>
+          </details>
+
+          <details>
+            <summary>Sport</summary>
+            <ul>
+              <li><label><input type="checkbox" /> Hardlopen</label></li>
+              <li><label><input type="checkbox" /> Voetbal</label></li>
+            </ul>
+          </details>
+        </aside>
+
+        <!-- PRODUCTEN -->
+        <section class="products">
+          <article>
+            <a href="#">
+              <img
+                src="images/AIR+JORDAN+5+RETRO+OG.jpeg"
+                alt="Air Jordan 5 Retro Medium Soft Pink"
+              />
+              <h2>Air Jordan 5 Retro OG</h2>
+            </a>
+
+            <h3>Herenschoenen</h3>
+            <p>1 kleur</p>
+            <h4>€ 209,99</h4>
+          </article>
+
+          <article>
+            <a href="#">
+              <img
+                src="images/NIKE+AIR+MAX+95+BIG+BUBBLE.jpeg"
+                alt="Nike Air Max 95 Big Bubble"
+              />
+              <h2>Nike Air Max 95 Big Bubble</h2>
+            </a>
+
+            <h3>Herenschoenen</h3>
+            <p>1 kleur</p>
+            <h4>€ 189,99</h4>
+          </article>
+
+          <article>
+            <a href="#">
+              <img src="images/sportshirt.jpeg" alt="Nike sportshirt met print" />
+              <h2>Nike Dri-FIT T-shirt</h2>
+            </a>
+
+            <h3>Herentop</h3>
+            <p>1 kleur</p>
+            <h4>€ 39,99</h4>
+          </article>
+        </section>
+      </section>
+
+      <!-- =========================================== -->
+      <!-- GERELATEERD                              -->
+      <!-- =========================================== -->
+      <section class="related">
+        <h2>Gerelateerde categorieën</h2>
+
+        <ul>
+          <li><a href="#">Nieuwe voetbalschoenen</a></li>
+          <li><a href="#">Nieuwe jongensschoenen</a></li>
+          <li><a href="#">Nieuwe hardloopschoenen</a></li>
+          <li><a href="#">Nieuwe basketbalschoenen</a></li>
+          <li><a href="#">Herenschoenen</a></li>
+          <li><a href="#">Nieuwe tops en T-shirts</a></li>
+        </ul>
+      </section>
     </main>
 
+    <!-- =============================================== -->
+    <!-- FOOTER (zelfde als pagina 1)                  -->
+    <!-- =============================================== -->
     <footer>
-        <section>
-            <button>Bronnen</button>
-            <ul>
-                <li><a href="#"></a></li>
-                <li><a href="#"></a></li>
-                <li><a href="#"></a></li>
-                <li><a href="#"></a></li>
-                <li><a href="#"></a></li>
-            </ul>
-            
-            <button>Hulp</button>
-            <ul>
-                <li><a href="#"></a></li>
-                <li><a href="#"></a></li>
-                <li><a href="#"></a></li>
-                <li><a href="#"></a></li>
-                <li><a href="#"></a></li>
-            </ul>
-            
-            <button>Bedrijf</button>
-            <ul>
-                <li><a href="#"></a></li>
-                <li><a href="#"></a></li>
-                <li><a href="#"></a></li>
-                <li><a href="#"></a></li>
-                <li><a href="#"></a></li>
-            </ul>
-            
-            <button>Communitykortingen</button>
-            <ul>
-                <li><a href="#"></a></li>
-                <li><a href="#"></a></li>
-                <li><a href="#"></a></li>
-                <li><a href="#"></a></li>
-            </ul>
-        </section>
+      <!-- FOOTER LINKS BLOK -->
+      <section>
+        <button>Bronnen</button>
+        <ul>
+          <li><a href="#">Cadeaubonnen</a></li>
+          <li><a href="#">Zakelijke cadeaubonnen</a></li>
+          <li><a href="#">Zoek een store</a></li>
+          <li><a href="#">Nike Journal</a></li>
+          <li><a href="#">Word member</a></li>
+          <li><a href="#">Feedback</a></li>
+          <li><a href="#">Promotiecodes</a></li>
+          <li><a href="#">Productadvies</a></li>
+          <li><a href="#">Running Shoe Finder</a></li>
+        </ul>
 
-        <section>
-            <a href="#">Nederland</a>
-            <p>© 2025 Nike, Inc. Alle rechten voorbehouden</p>
-            <ul>
-                <li><a href="handleidingen.html">Handleidingen</a></li>
-                <li><a href="gebruiksvoorwaarden.html">Gebruiksvoorwaarden</a></li>
-                <li><a href="verkoopvoorwaarden.html">Verkoopvoorwaarden</a></li>
-                <li><a href="bedrijfsgegevens.html">Bedrijfsgegevens</a></li>
-                <li><a href="privacybeleid.html">Privacy- en cookiebeleid</a></li>
-                <li><a href="#">Privacy- en cookie-instellingen</a></li>
-            </ul>
-        </section>
+        <button>Hulp</button>
+        <ul>
+          <li><a href="#">Over Nike</a></li>
+          <li><a href="#">Nieuws</a></li>
+          <li><a href="#">Werken bij Nike</a></li>
+          <li><a href="#">Investeerders</a></li>
+          <li><a href="#">Duurzaamheid</a></li>
+          <li><a href="#">Toegankelijkheid</a></li>
+          <li><a href="#">Missie</a></li>
+          <li><a href="#">Nike Coaching</a></li>
+          <li><a href="#">Een kwestie melden</a></li>
+        </ul>
+
+        <button>Bedrijf</button>
+        <ul>
+          <li><a href="#">Over Nike</a></li>
+          <li><a href="#">Nieuws</a></li>
+          <li><a href="#">Werken bij Nike</a></li>
+          <li><a href="#">Investeerders</a></li>
+          <li><a href="#">Duurzaamheid</a></li>
+          <li><a href="#">Toegankelijkheid</a></li>
+          <li><a href="#">Missie</a></li>
+          <li><a href="#">Nike Coaching</a></li>
+          <li><a href="#">Een kwestie melden</a></li>
+        </ul>
+
+        <button>Communitykortingen</button>
+        <ul>
+          <li><a href="#">Student</a></li>
+          <li><a href="#">Docent</a></li>
+          <li><a href="#">Eerstehulpverleners</a></li>
+          <li><a href="#">Zorgprofessionals</a></li>
+        </ul>
+      </section>
+
+      <!-- FOOTER ONDERSTE RIJ -->
+      <section>
+        <p>© 2025 Nike, Inc. Alle rechten voorbehouden</p>
+
+        <ul>
+          <li><a href="handleidingen.html">Handleidingen</a></li>
+          <li><a href="gebruiksvoorwaarden.html">Gebruiksvoorwaarden</a></li>
+          <li><a href="verkoopvoorwaarden.html">Verkoopvoorwaarden</a></li>
+          <li><a href="bedrijfsgegevens.html">Bedrijfsgegevens</a></li>
+          <li><a href="privacybeleid.html">Privacy- en cookiebeleid</a></li>
+          <li><a href="#">Privacy- en cookie-instellingen</a></li>
+        </ul>
+      </section>
     </footer>
 
-    <script defer src="scripts/script.js"></script>
-</body>
-    
+    <!-- =============================================== -->
+    <!-- SCRIPT                                         -->
+    <!-- =============================================== -->
+    <script defer src="script.js"></script>
+  </body>
 </html>

@@ -1,155 +1,254 @@
 <!DOCTYPE html>
 <html lang="nl">
-    
-<head>
-    <meta charset="UTF-8">
-    <meta name="author" content="Ramez Amim">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="author" content="Ramez Amim" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Nike | Officiële Website</title>
-    <link href="style.css" rel="stylesheet">
-    <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
-</head>
-<body>
-    
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="images/nikelogo.png" />
+  </head>
+
+  <body data-theme="dark">
+    <!-- =============================================== -->
+    <!-- HEADER / NAV                                 -->
+    <!-- =============================================== -->
     <header>
-		<nav>
-             <ul>
-				<li><a href="index.html"><img src="nikelogo.png" alt="Nike Logo"></a></li>
-                <li><button aria-label="Zoeken"><img src="zoekicoon.png" alt=""></button></li>
-                <li><a href="account.html" aria-label="Account"><img src="accounticoon.png" alt=""></a></li>
-                <li><a href="winkelmandje.html" aria-label="Winkelmandje"><img src="winkelmandjeicoon.png" alt=""></a></li>
-                <li><button aria-label="Menu"><img src="hamburgermenu.png" alt=""></button></li>
+      <nav>
+        <ul class="nav">
+          <!-- LOGO -->
+          <li class="nav-logo">
+            <a href="index.html">
+              <img src="images/nikelogo.png" alt="Nike Logo" />
+            </a>
+          </li>
 
+          <!-- MIDDEN MENU -->
+          <li class="nav-center">
+            <ul class="nav-links">
+              <li class="has-dropdown">
+                <a href="nieuw.html">Nieuw</a>
+
+                <!-- DROPDOWN -->
+                <ul class="dropdown">
+                  <li><a href="nieuw.html">Shop alle nieuwe producten</a></li>
+                  <li><a href="#">Bestsellers</a></li>
+                  <li><a href="#">Introductiekalender SNKRS</a></li>
+                  <li><a href="#">Beste voor de winter</a></li>
+                </ul>
+              </li>
             </ul>
-        </nav>
-    </header>
+          </li>
 
+          <!-- THEME TOGGLE BUTTON -->
+          <li class="nav-theme">
+            <button id="theme-toggle" aria-label="Toggle dark mode">🌙</button>
+          </li>
+
+          <!-- ICONS RECHTS -->
+          <li class="nav-icons">
+            <button aria-label="Zoeken">
+              <img src="images/zoekicoon.png" alt="zoekicoon" />
+            </button>
+
+            <a href="index.html" aria-label="Account">
+              <img src="images/accounticoon.png" alt="accounticoon" />
+            </a>
+
+            <a href="index.html" aria-label="Winkelmandje">
+              <img src="images/winkelmandjeicoon.png" alt="winkelmandjeicoon" />
+            </a>
+
+              <button id="menu-toggle" type="button" aria-label="Menu" aria-expanded="false">
+                <img src="images/hamburgermenu.png" alt="hamburgermenuicoon" />
+              </button>
+
+          </li>
+        </ul>
+      </nav>
+      <!-- 👇 MOBIEL MENU (HIER!) -->
+      <nav class="mobile-menu" aria-label="Mobiel menu" hidden>
+        <ul>
+          <li><a href="nieuw.html">Nieuw</a></li>
+        </ul>
+    </nav>
+  </header>
+
+    <!-- =============================================== -->
+    <!-- MAIN                                          -->
+    <!-- =============================================== -->
     <main>
+      <!-- =========================================== -->
+      <!-- HERO (VIDEO)                              -->
+      <!-- =========================================== -->
+      <section id="hero">
+        <video autoplay muted loop playsinline>
+          <source src="images/homevid.mp4" type="video/mp4" />
+        </video>
+
+        <h1>Home Pagina Nike</h1>
+        <h2>GEEF EEN SPORTIEF CADEAU</h2>
+        <p>Geef je favoriete atleten de gear om volgend jaar hun records te verbreken.</p>
+
+        <ul>
+          <li><a href="index.html">Shop</a></li>
+          <li><a href="index.html">Bekijk</a></li>
+        </ul>
+
+        <button>⏸</button>
+      </section>
+
+      <!-- =========================================== -->
+      <!-- BANNERS                                   -->
+      <!-- =========================================== -->
+      <div id="banners">
         <section>
-            <video autoplay muted loop playsinline>
-                <source src="homevid.mp4" type="video/mp4">
-            </video>
-
-			   <h1>Home Pagina Nike</h1>  <!-- moet hidden gemaakt worden-->
-               <h2>GEEF EEN SPORTIEF CADEAU</h2>
-                <p>Geef je favoriete atleten de gear om volgend jaar hun records te verbreken.</p>
-
-                <ul>
-                    <li><a href="index.html">Shop</a></li>
-                    <li><a href="index.html">Bekijk</a></li>
-                </ul>
-				<button>⏸</button>
+          <img src="images/shopheren.jpg" alt="Man in trainingspak met Nike Airmax" />
+          <h2>Nieuw: Mannen items</h2>
+          <h3>Niets te bewijzen</h3>
+          <a href="index.html">Shop</a>
         </section>
 
         <section>
-                <img src="shopheren.jpg" alt="Man in trainingspak met Nike Airmax">
-        			<h2>Nieuw: Mannen items</h2>
-                	<h3>Niets te bewijzen</h3>                                                  <!-- voor alle items nog effe een goeie h2 en h3 bedenken-->
-                <a href="index.html">Shop</a>                                                     <!-- dit komt omdat de website van nike is veranderd maar ik had de fotos nog niet gedownload dus ik wil de structuur wel houden maar fotos verander ik. -->
+          <img src="images/shopdames.jpg" alt="Foto van Dame in trainingspak" />
+          <h2>Nieuw: Vrouwen items</h2>
+          <h3>Niets te bewijzen</h3>
+          <a href="index.html">Shop</a>
         </section>
 
         <section>
-                <img src="shopdames.jpg" alt="Foto van Dame in trainingspak">
-                <h2>Nieuw: Vrouwen items</h2>
-                <h3>Niets te bewijzen</h3>
-                <a href="index.html">Shop</a>
+          <img src="images/shopkinderen.jpg" alt="Meisje met winterkleren" />
+          <h2>Nieuw: Kids items</h2>
+          <h3>Niets te bewijzen</h3>
+          <a href="index.html">Shop</a>
         </section>
 
         <section>
-                <img src="shopkinderen.jpg" alt="Meisje met winterkleren">
-                <h2>Nieuw: Kids items</h2>
-                <h3>Niets te bewijzen</h3>
-                <ul>
-                    <li><a href="index.html">Shop alles</a></li>
-                    <li><a href="index.html">Shop kids</a></li>
-                </ul>
+          <img src="images/sportessentials.jpeg" alt="Vrouw met sportkleren die rent" />
+          <h2>Nieuw: Sportessentials</h2>
+          <h3>Niets te bewijzen</h3>
+          <a href="index.html">Shop</a>
         </section>
-        
-        <section>
-                <img src="sportessentials.jpeg" alt="Vrouw met sportkleren die rent">
-                <h2>Nieuw: sportessentials</h2>
-                <h3>Niets te bewijzen</h3>
-                <ul>
-                    <li><a href="index.html">Shop alles</a></li>
-                    <li><a href="index.html">Shop kids</a></li>
-                </ul>
-        </section>
+      </div>
 
+      <!-- =========================================== -->
+      <!-- LINKS SECTION (UITKLAP LIJSTEN)           -->
+      <!-- =========================================== -->
+      <section id="links">
+        <ul>
+          <li>
+            <button>Schoenen</button>
+            <ul>
+              <li><a href="#">Zwarte hardloopschoenen</a></li>
+              <li><a href="#">Witte hardloopschoenen</a></li>
+              <li><a href="#">Nike P-6000 schoenen</a></li>
+              <li><a href="#">Nike Initiator schoenen</a></li>
+            </ul>
+          </li>
 
-        <section>
-                <ul>
-                    <li><button>Schoenen</button></li>
-                    <li><button>Kleding</button></li>
-                    <li><button>Kids</button></li>
-                    <li><button>Uitgelicht</button></li>
-                </ul>
-        </section>
+          <li>
+            <button>Kleding</button>
+            <ul>
+              <li><a href="#">Yogabroeken</a></li>
+              <li><a href="#">Tech Fleece Joggers</a></li>
+              <li><a href="#">Tech Fleece</a></li>
+              <li><a href="#">Cadeaus: kleding</a></li>
+            </ul>
+          </li>
 
+          <li>
+            <button>Kids</button>
+            <ul>
+              <li><a href="#">Zwarte meisjesschoenen</a></li>
+              <li><a href="#">Zwarte kinderschoenen</a></li>
+            </ul>
+          </li>
+
+          <li>
+            <button>Uitgelicht</button>
+            <ul>
+              <li><a href="#">Voetbalclubteams</a></li>
+              <li><a href="#">Voetbal</a></li>
+              <li><a href="#">Nike Engeland</a></li>
+              <li><a href="#">Nike Run Club</a></li>
+            </ul>
+          </li>
+        </ul>
+      </section>
     </main>
 
+    <!-- =============================================== -->
+    <!-- FOOTER                                        -->
+    <!-- =============================================== -->
     <footer>
-        <section>
-            
-                <button>Bronnen</button>
-                <ul>
-                    <li><a href="#"></a></li>
-                    <li><a href="#"></a></li>
-                    <li><a href="#"></a></li>
-                    <li><a href="#"></a></li>
-                    <li><a href="#"></a></li>
-                </ul>
-            
+      <!-- FOOTER LINKS BLOK -->
+      <section>
+        <button>Bronnen</button>
+        <ul>
+          <li><a href="#">Cadeaubonnen</a></li>
+          <li><a href="#">Zakelijke cadeaubonnen</a></li>
+          <li><a href="#">Zoek een store</a></li>
+          <li><a href="#">Nike Journal</a></li>
+          <li><a href="#">Word member</a></li>
+          <li><a href="#">Feedback</a></li>
+          <li><a href="#">Promotiecodes</a></li>
+          <li><a href="#">Productadvies</a></li>
+          <li><a href="#">Running Shoe Finder</a></li>
+        </ul>
 
-            
-                <button>Hulp</button>
-                <ul>
-                    <li><a href="#"></a></li>
-                    <li><a href="#"></a></li>
-                    <li><a href="#"></a></li>
-                    <li><a href="#"></a></li>
-                    <li><a href="#"></a></li>
-                </ul>
-            
+        <button>Hulp</button>
+        <ul>
+          <li><a href="#">Over Nike</a></li>
+          <li><a href="#">Nieuws</a></li>
+          <li><a href="#">Werken bij Nike</a></li>
+          <li><a href="#">Investeerders</a></li>
+          <li><a href="#">Duurzaamheid</a></li>
+          <li><a href="#">Toegankelijkheid</a></li>
+          <li><a href="#">Missie</a></li>
+          <li><a href="#">Nike Coaching</a></li>
+          <li><a href="#">Een kwestie melden</a></li>
+        </ul>
 
-           
-                <button>Bedrijf</button>
-                <ul>
-                    <li><a href="#"></a></li>
-                    <li><a href="#"></a></li>
-                    <li><a href="#"></a></li>
-                    <li><a href="#"></a></li>
-                    <li><a href="#"></a></li>
-                </ul>
-            
-            
-            
-                <button>Communitykortingen</button>
-                <ul>
-                    <li><a href="#"></a></li>
-                    <li><a href="#"></a></li>
-                    <li><a href="#"></a></li>
-                    <li><a href="#"></a></li>
-                </ul>
-          
-        </section>
+        <button>Bedrijf</button>
+        <ul>
+          <li><a href="#">Over Nike</a></li>
+          <li><a href="#">Nieuws</a></li>
+          <li><a href="#">Werken bij Nike</a></li>
+          <li><a href="#">Investeerders</a></li>
+          <li><a href="#">Duurzaamheid</a></li>
+          <li><a href="#">Toegankelijkheid</a></li>
+          <li><a href="#">Missie</a></li>
+          <li><a href="#">Nike Coaching</a></li>
+          <li><a href="#">Een kwestie melden</a></li>
+        </ul>
 
-        <section>
-            <a href="#">Nederland</a>
-            <p>© 2025 Nike, Inc. Alle rechten voorbehouden</p>
-            
-                <ul>
-                    <li><a href="handleidingen.html">Handleidingen</a></li>
-                    <li><a href="gebruiksvoorwaarden.html">Gebruiksvoorwaarden</a></li>
-                    <li><a href="verkoopvoorwaarden.html">Verkoopvoorwaarden</a></li>
-                    <li><a href="bedrijfsgegevens.html">Bedrijfsgegevens</a></li>
-                    <li><a href="privacybeleid.html">Privacy- en cookiebeleid</a></li>
-                    <li><a href="#">Privacy- en cookie-instellingen</a></li>
-                </ul>
-            
-        </section>
+        <button>Communitykortingen</button>
+        <ul>
+          <li><a href="#">Student</a></li>
+          <li><a href="#">Docent</a></li>
+          <li><a href="#">Eerstehulpverleners</a></li>
+          <li><a href="#">Zorgprofessionals</a></li>
+        </ul>
+      </section>
+
+      <!-- FOOTER ONDERSTE RIJ -->
+      <section>
+        <p>© 2025 Nike, Inc. Alle rechten voorbehouden</p>
+
+        <ul>
+          <li><a href="handleidingen.html">Handleidingen</a></li>
+          <li><a href="gebruiksvoorwaarden.html">Gebruiksvoorwaarden</a></li>
+          <li><a href="verkoopvoorwaarden.html">Verkoopvoorwaarden</a></li>
+          <li><a href="bedrijfsgegevens.html">Bedrijfsgegevens</a></li>
+          <li><a href="privacybeleid.html">Privacy- en cookiebeleid</a></li>
+          <li><a href="#">Privacy- en cookie-instellingen</a></li>
+        </ul>
+      </section>
     </footer>
 
-    <script defer src="scripts/script.js"></script>
-</body>
-    
+    <!-- =============================================== -->
+    <!-- SCRIPT                                         -->
+    <!-- =============================================== -->
+    <script defer src="script.js"></script>
+  </body>
 </html>

@@ -1,191 +1,942 @@
-/* ========== CUSTOM FONTS (bron: ChatGPT) ========== */
+/* =========================================================
+   BRONVERMELDING CSS
+   =========================================================
 
-/* Helvetica Now Text Regular */
+
+   Tijdens het maken heb ik:
+   - Veel getest en aangepast door trial & error
+   - W3Schools gebruikt voor basis CSS (flexbox, media queries):
+     https://www.w3schools.com/css/
+   - ChatGPT gebruikt als hulp en sparringpartner om:
+     • te begrijpen welke selectors ik moest gebruiken
+     • problemen met layout en positioning op te lossen
+     • dark / light mode te maken met CSS-variabelen
+     • responsive gedrag te verbeteren
+
+   De code is steeds aangepast zodat het past
+   bij mijn HTML en ontwerp.
+
+   ========================================================= */
+
+/* ========================================================= */
+/* THEMA VARIABELEN (LIGHT DEFAULT)                           */
+/* ========================================================= */
+:root{
+  --bg: #ffffff;         /* pagina achtergrond */
+  --text: #111111;       /* normale tekst */
+  --muted: #737373;      /* grijze tekst */
+  --border: #e5e5e5;     /* lijnen/randen */
+  --panel: #f5f5f5;      /* nav/dropdown achtergrond */
+  --subnav: #f5f5f5;     /* lichtgrijze balk */
+  --shadow: 0 10px 30px rgba(0,0,0,.12);
+
+  --radius: 12px;
+  --pill: 999px;
+
+  --header-h: 60px;      /* hoogte van fixed header */
+}
+
+/* ========================================================= */
+/* THEMA VARIABELEN (DARK)                                    */
+/* ========================================================= */
+body[data-theme="dark"]{
+  --bg: #0b0b0b;
+  --text: #f2f2f2;
+  --muted: #b5b5b5;
+  --border: #2a2a2a;
+  --panel: #b2b2b2;
+  --subnav: #151515;
+  --shadow: 0 10px 30px rgba(0,0,0,.45);
+}
+
+/* ========================================================= */
+/* 1. CUSTOM FONTS                                            */
+/* ========================================================= */
 @font-face {
-    font-family: "HelveticaNowText";
-    src: url("fonts/HelveticaNowText.woff2") format("woff2");
-    font-weight: 400;
-    font-style: normal;
-    font-display: swap;
+  font-family: "HelveticaNowText";
+  src: url("fonts/HelveticaNowText.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
 }
 
-/* Helvetica Now Text Medium */
 @font-face {
-    font-family: "HelveticaNowText";
-    src: url("fonts/HelveticaNowTextMedium.woff2") format("woff2");
-    font-weight: 500;
-    font-style: normal;
-    font-display: swap;
+  font-family: "HelveticaNowText";
+  src: url("fonts/HelveticaNowTextMedium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
 }
 
-/* Helvetica Now Display Medium (voor headings) */
 @font-face {
-    font-family: "HelveticaNowDisplay";
-    src: url("fonts/HelveticaNowDisplayMedium.woff2") format("woff2");
-    font-weight: 500;
-    font-style: normal;
-    font-display: swap;
+  font-family: "HelveticaNowDisplay";
+  src: url("fonts/HelveticaNowDisplayMedium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
 }
 
-/* Nike Futura (voor logo-styling en buttons) */
 @font-face {
-    font-family: "NikeFutura";
-    src: url("fonts/Nike-Futura.woff2") format("woff2");
-    font-weight: 400;
-    font-style: normal;
-    font-display: swap;
+  font-family: "NikeFutura";
+  src: url("fonts/Nike-Futura.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ========================================================= */
+/* 2. RESET + BASIS                                           */
+/* ========================================================= */
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body{
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+body{
+  font-family: system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+img, video{
+  max-width: 100%;
+  display: block;
+}
+
+/* links standaard */
+a{
+  color: inherit;
+}
+
+/* ========================================================= */
+/* 3. NAVIGATION                                              */
+/* ========================================================= */
+header{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999;
+  padding: .5rem 1rem;
+
+  background: var(--panel);
+  border-bottom: 1px solid var(--border);
+}
+
+/* alleen hoofd-ul (niet dropdown ul) */
+header nav > ul.nav{
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* logo links */
+.nav-logo img{
+  height: 50px;
+}
+
+/* midden menu centreren */
+.nav-center{
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.nav-links{
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-links a{
+  text-decoration: none;
+  color: var(--text);
+  font-weight: 600;
+  font-size: .95rem;
+}
+
+/* icons rechts */
+.nav-icons{
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.nav-icons img{
+  height: 20px;
+}
+
+/* dark/light knop */
+#theme-toggle{
+  background: none;
+  border: 0;
+  cursor: pointer;
+  font-size: 1.2rem;
+  color: var(--text);
+}
+
+/* ===== DROPDOWN (VOLLE BALK) ===== */
+.has-dropdown{
+  position: relative;
+}
+
+.dropdown{
+  position: absolute;
+  top: calc(100% + 12px);
+  left: 50%;
+  transform: translateX(-50%);
+
+  width: 100vw;
+  padding: 2rem 0;
+
+  background: var(--panel);
+  border-top: 1px solid var(--border);
+  box-shadow: var(--shadow);
+
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .2s ease;
+
+  display: grid;
+  justify-items: center;
+  gap: .75rem;
+}
+
+.dropdown li{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.dropdown a{
+  display: block;
+  text-decoration: none;
+  color: var(--text);
+  font-weight: 600;
+  text-align: center;
+}
+
+/* open */
+.has-dropdown:hover .dropdown,
+.has-dropdown:focus-within .dropdown{
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* hover-gat opvullen */
+.has-dropdown::after{
+  content:"";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 100%;
+  height: 12px;
+}
+
+/* ========================================================= */
+/* 4. SUBNAV (grijze balk onder nav)                          */
+/* ========================================================= */
+.subnav{
+  margin-top: var(--header-h);
+  background: var(--subnav);
+  border-bottom: 1px solid var(--border);
+  padding: 1.1rem 1rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.subnav p{
+  margin: 0;
+  font-size: .85rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+/* ========================================================= */
+/* 5. HERO                                                    */
+/* ========================================================= */
+#hero{
+  position: relative;
+  margin-top: var(--header-h);
+  height: 90vh;
+  overflow: hidden;
+}
+
+#hero video{
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+#hero h1{
+  position: absolute;
+  left: -9999rem;
+}
+
+#hero h2{
+  position: absolute;
+  left: 50%;
+  top: 55%;
+  transform: translateX(-50%);
+  width: 90%;
+  color: #fff;
+  text-align: center;
+  font-size: 5em;
+  font-weight: 900;
+  font-family: "HelveticaNowDisplay";
+}
+
+#hero p{
+  position: absolute;
+  left: 50%;
+  top: 70%;
+  transform: translateX(-50%);
+  width: 90%;
+  color: #fff;
+  text-align: center;
+  font-size: 2em;
+}
+
+#hero ul{
+  position: absolute;
+  left: 50%;
+  top: 80%;
+  transform: translateX(-50%);
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+}
+
+#hero ul li a{
+  background: #fff;
+  color: #000;
+  padding: .7rem 1.4rem;
+  border-radius: var(--pill);
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 600;
+  font-family: "NikeFutura";
+}
+
+#hero button:last-of-type{
+  position: absolute;
+  right: 1rem;
+  bottom: 1rem;
+  background: rgba(255,255,255,.8);
+  padding: .5rem 1.2rem;
+  border-radius: var(--pill);
+}
+
+/* ========================================================= */
+/* 6. BANNERS                                                 */
+/* ========================================================= */
+#banners{
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+#banners > section{
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius);
+}
+
+#banners > section > img{
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+}
+
+#banners > section > h2,
+#banners > section > h3,
+#banners > section > a{
+  position: absolute;
+  left: 1rem;
+  color: #fff;
+  text-shadow: 0 0 8px rgba(0,0,0,.6);
+  z-index: 2;
+}
+
+#banners > section > h2{ bottom: 6.5rem; font-size: .9rem; font-weight: 500; }
+#banners > section > h3{ bottom: 4.2rem; font-size: 1.2rem; font-weight: 700; }
+
+#banners > section > a{
+  bottom: 1rem;
+  background: #fff;
+  color: #000;
+  text-decoration: none;
+  padding: .45rem .9rem;
+  border-radius: var(--pill);
+  font-size: .85rem;
+  font-weight: 600;
+}
+
+@media (min-width: 900px){
+  #banners{
+    grid-template-columns: repeat(2, 1fr);
+    padding: 2rem;
+    gap: 1.5rem;
+  }
+}
+
+/* ========================================================= */
+/* 7. LINKS (Schoenen/Kleding/Kids/Uitgelicht)                */
+/* ========================================================= */
+#links{
+  margin-top: 4rem;
+  background: var(--bg);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+#links > ul{
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(4, auto);
+  justify-content: center;
+  column-gap: 5rem;
+  padding: 3rem 2rem;
+}
+
+#links button{
+  background: none;
+  border: 0;
+  font-weight: 530;
+  font-size: 1.4rem;
+  cursor: pointer;
+  padding: 0;
+  color: var(--text);
+}
+
+#links li > ul{
+  list-style: none;
+  margin-top: 1.2rem;
+  margin-bottom: 5rem;
+  padding: 0;
+
+  max-height: 0;
+  overflow: hidden;
+
+  display: grid;
+  gap: .8rem;
+
+  opacity: 0;
+  transform: translateY(-6px);
+  transition: max-height .25s ease, opacity .2s ease, transform .2s ease;
+}
+
+#links li:hover > ul{
+  max-height: 500px;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+#links a{
+  text-decoration: none;
+  color: var(--muted);
+  font-size: .95rem;
+  font-weight: 500;
+}
+
+#links a:hover{
+  color: var(--text);
+}
+
+/* ========================================================= */
+/* 8. FOOTER                                                  */
+/* ========================================================= */
+footer ul{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+footer > section:first-of-type{
+  display: grid;
+  grid-template-rows: auto 1fr;
+  grid-auto-flow: column;
+  column-gap: 6rem;
+  row-gap: 1rem;
+
+  padding: 3rem 2rem;
+  border-top: 1px solid var(--border);
+}
+
+footer > section:first-of-type > button{
+  background: none;
+  border: 0;
+  padding: 0;
+  padding-left: 4rem;
+  margin: 1rem;
+  text-align: left;
+
+  font-weight: 550;
+  font-size: .95rem;
+  color: var(--text);
+}
+
+footer > section:first-of-type > ul a{
+  color: var(--muted);
+  text-decoration: none;
+  font-size: .9rem;
+  padding-left: 5rem;
+  font-weight: 500;
+}
+
+footer > section:first-of-type > ul a:hover{
+  color: var(--text);
+}
+
+footer > section:last-of-type{
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+
+  padding: 1.5rem 2rem;
+  padding-left: 5rem;
+
+  color: var(--muted);
+  font-weight: 500;
+  font-size: small;
+}
+
+footer > section:last-of-type ul{
+  display: flex;
+  gap: 1.5rem;
+  padding: 0;
+}
+
+footer a{
+  color: var(--muted);
+  text-decoration: none;
+}
+
+footer a:hover{
+  color: var(--text);
 }
 
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+
+/* ========================================================= */
+/* 9. PAGINA 2: RELEASES                                      */
+/* ========================================================= */
+body.releases main{
+  padding-top: calc(var(--header-h) + 1rem);
 }
 
-body {
-    font-family: system-ui, sans-serif;
+.releases-top{
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 2rem 2rem 1rem;
 }
 
-/* ========== NAVIGATION ========== */
-
-/* De hele header */
-header {
-    position: fixed;      /* header blijft bovenaan plakken */
-    top: 0;
-    left: 0;
-    width: 100%;
-    background: white;
-    border-bottom: 1px solid #e5e5e5;
-    z-index: 999;
-    padding: 0.5rem 1rem; 
+.releases-top h1{
+  font-size: 1.8rem;
+  font-weight: 700;
 }
 
-/* De lijst van logo + iconen */
-header nav ul {
-    list-style: none;
-    display: flex;                  
-    align-items: center;
+.releases-top p{
+  color: var(--muted);
+  font-weight: 500;
+  margin-top: .25rem;
 }
 
-/* LOGO (eerste li) moet links blijven */
-header nav ul li:first-child {
-    margin-right: auto;
+.releases-actions button{
+  border: 1px solid var(--border);
+  background: var(--panel);
+  color: var(--text);
+  padding: .6rem 1rem;
+  border-radius: var(--pill);
+  font-weight: 600;
+  cursor: pointer;
 }
 
-/* ========== ICON FORMATS ========== */
-
-/* LOGO grootte */
-header nav ul li:first-child img {
-    height: 50px;   /* Nike gebruikt ± 28px op mobiel */
-    width: auto;
+.releases-layout{
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: 2rem;
+  padding: 0 2rem 2rem;
+  align-items: start;
 }
 
-/* ICONEN grootte */
-header nav ul li:not(:first-child) img {
-    height: 20px;   /* Nike iconen zijn 18–20px */
-    width: auto;
+/* filters sidebar (sticky + scrollbar) */
+#filters{
+  position: sticky;
+  top: calc(var(--header-h) + 1rem);
+  max-height: calc(100vh - var(--header-h) - 2rem);
+  overflow-y: auto;
+
+  padding-right: 1rem;
+  border-right: 1px solid var(--border);
+  overscroll-behavior: contain;
 }
 
-/* Ruimte tussen iconen */
-header nav ul li:not(:first-child) {
-    margin-left: 1rem;
+#filters h2{
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
 }
 
-/* ===== HERO BASIS ===== */
-main section:first-of-type {
-    position: relative;
-    margin-top: 60px; /* ruimte voor fixed nav */
+#filters > ul{
+  list-style: none;
+  display: grid;
+  gap: .6rem;
+  padding: 0;
+  margin: 0 0 1rem 0;
 }
 
-/* VIDEO VOLLEDIG VULLEN ZONDER ZWARTE RANDEN */
-main section:first-of-type video {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;   
-    z-index: -1;         
+#filters > ul button{
+  background: none;
+  border: 0;
+  text-align: left;
+  padding: .35rem 0;
+  font-weight: 600;
+  color: var(--text);
+  cursor: pointer;
 }
 
-
-main section:first-of-type {
-    height: 90vh;       
-    position: relative;
-    overflow: hidden;    
+/* details/summary */
+#filters details{
+  border-top: 1px solid var(--border);
+  padding: .9rem 0;
 }
 
-
-/* H1 verbergen maar wel toegankelijk houden */
-main section:first-of-type h1 {
-    position: absolute;
-    left: -9999rem;
+#filters details:last-of-type{
+  border-bottom: 1px solid var(--border);
 }
 
-/* ===== OVERLAY TEKST & KNOPPEN ===== */
-
-/* Grote zichtbare titel (H2) */
-main section:first-of-type h2 {
-    position: absolute;
-    left: 50%;
-    top: 55%;
-    transform: translateX(-50%);
-    width: 90%;
-    color: white;
-    text-align: center;
-    font-size: 5em;      
-    font-weight: 900;
+#filters summary{
+  list-style: none;
+  cursor: pointer;
+  font-weight: 650;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  color: var(--text);
 }
 
-/* Ondertekst (p) */
-main section:first-of-type p {
-    position: absolute;
-    left: 50%;
-    top: 70%;
-    transform: translateX(-50%);
-    width: 90%;
-    color: white;
-    text-align: center;
-    font-size: 2em;
-    font-weight: 400;
+#filters summary::-webkit-details-marker{
+  display: none;
 }
 
-/* Knoppen-container (ul) */
-main section:first-of-type ul {
-    position: absolute;
-    left: 50%;
-    top: 80%;
-    transform: translateX(-50%);
-    display: flex;
+#filters summary::after{
+  content: "▾";
+  font-size: .9rem;
+  transition: transform .2s ease;
+}
+
+#filters details[open] summary::after{
+  transform: rotate(180deg);
+}
+
+#filters details > ul{
+  list-style: none;
+  margin-top: .75rem;
+  display: grid;
+  gap: .5rem;
+  padding: 0;
+}
+
+#filters details label{
+  color: var(--text);
+  font-weight: 500;
+  font-size: .95rem;
+}
+
+#filters details input{
+  margin-right: .5rem;
+}
+
+/* scrollbar styling */
+#filters::-webkit-scrollbar{ width: 8px; }
+#filters::-webkit-scrollbar-thumb{
+  background: #cfcfcf;
+  border-radius: var(--pill);
+}
+#filters::-webkit-scrollbar-track{ background: transparent; }
+
+/* products grid */
+.products{
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.5rem 1rem;
+}
+
+.products article img{
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: var(--radius);
+}
+
+.products a{
+  text-decoration: none;
+  color: var(--text);
+}
+
+/* filters hidden (JS class op body) */
+body.releases.filters-hidden .releases-layout{
+  grid-template-columns: 0 1fr;
+}
+
+body.releases.filters-hidden #filters{
+  width: 0;
+  padding: 0;
+  border: 0;
+  overflow: hidden;
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* related pills */
+.related{
+  padding: 2rem 2rem 2.5rem;
+  border-top: 1px solid var(--border);
+}
+
+.related h2{
+  font-size: 1.4rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+}
+
+.related ul{
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: .75rem;
+  padding: 0;
+  margin: 0;
+}
+
+.related a{
+  display: inline-flex;
+  align-items: center;
+  height: 36px;
+  padding: 0 14px;
+
+  border: 1px solid var(--border);
+  border-radius: var(--pill);
+  background: var(--panel);
+
+  color: var(--text);
+  text-decoration: none;
+  font-size: .85rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.related a:hover{
+  border-color: var(--text);
+}
+
+/* ========================================================= */
+/* 10. RESPONSIVE                                             */
+/* ========================================================= */
+@media (max-width: 600px){
+  .nav-center{ display: none; }
+  .dropdown{ display: none !important; }
+
+  #hero{ height: 80vh; }
+
+  #hero h2{
+    font-size: clamp(2rem, 10vw, 3.2rem);
+    line-height: 1.05;
+  }
+
+  #hero p{
+    font-size: clamp(1rem, 4.5vw, 1.3rem);
+  }
+
+  #hero ul{
+    flex-wrap: wrap;
     justify-content: center;
-    gap: 1rem;
-    list-style: none;
-    padding: 0;
+  }
+
+  #banners > section > img{ aspect-ratio: 3 / 4; }
+
+  #links{ margin-top: 2rem; }
+
+  #links > ul{
+    grid-template-columns: 1fr;
+    row-gap: 1.25rem;
+    justify-content: stretch;
+    padding: 2rem 1rem;
+  }
+
+  footer > section:first-of-type{
+    grid-auto-flow: row;
+    grid-template-columns: 1fr;
+    padding: 2rem 1rem;
+  }
+
+  footer > section:first-of-type > button{
+    padding-left: 0;
     margin: 0;
+  }
+
+  footer > section:first-of-type > ul a{
+    padding-left: 0;
+  }
+
+  footer > section:last-of-type{
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1.5rem 1rem;
+  }
+
+  footer > section:last-of-type ul{
+    flex-wrap: wrap;
+    gap: .75rem 1rem;
+  }
+
+  .releases-layout{
+    grid-template-columns: 1fr;
+    padding: 0 1rem 2rem;
+  }
+
+  #filters{
+    position: static;
+    max-height: none;
+    border-right: 0;
+    padding-right: 0;
+    margin-bottom: 1.5rem;
+  }
+
+  .products{
+    grid-template-columns: 1fr;
+  }
 }
 
-/* Knoppen zelf */
-main section:first-of-type ul li a {
-    background: white;
-    color: black;
-    padding: 0.7rem 1.4rem;
-    border-radius: 2rem;
-    text-decoration: none;
-    font-size: 1rem;
-    font-weight: 600;
-    display: inline-block;
+@media (min-width: 601px) and (max-width: 899px){
+  .releases-layout{
+    grid-template-columns: 220px 1fr;
+    gap: 1.5rem;
+    padding: 0 1.5rem 2rem;
+  }
+
+  .products{
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  #links > ul{
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 2rem;
+  }
 }
 
+@media (max-width: 600px){
+  .nav-center{
+    display: none;
+  }
 
-/* Pauzeknop rechtsonder */
-main section:first-of-type button:last-of-type {
-    position: absolute;
-    right: 1rem;
-    bottom: 1rem;
-    background: rgba(255,255,255,0.8);
-    padding: 0.5rem 1.2rem;
-    border-radius: 2rem;
+  /* zorg dat icon-blok echt rechts blijft */
+  .nav-icons{
+    margin-left: auto;
+  }
+
+  /* dropdown nooit tonen op mobiel */
+  .dropdown{
+    display: none !important;
+  }
 }
 
+@media (max-width: 600px){
+  #hero{
+    height: 80vh;
+  }
+
+  #hero h2{
+    top: 56%;
+    font-size: clamp(2rem, 10vw, 3.2rem);
+    line-height: 1.05;
+  }
+
+  #hero p{
+    top: 70%;
+    font-size: clamp(1rem, 4.5vw, 1.3rem);
+  }
+
+  #hero ul{
+    top: 82%;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+/* ========================================================= */
+/* MOBIEL FIX: meer ruimte tussen H2 en P in hero             */
+/* ========================================================= */
+@media (max-width: 600px){
+
+  /* h2 iets hoger + nettere regelafstand */
+  #hero h2{
+    top: 48%;
+    line-height: 1.05;
+    letter-spacing: .02em;
+  }
+
+  /* p duidelijk lager zetten */
+  #hero p{
+    top: 68%;
+  }
+
+  /* knoppen ook een tikje lager indien nodig */
+  #hero ul{
+    top: 82%;
+  }
+}
+
+/* ========================================================= */
+/* MOBIEL HAMBURGER MENU                                     */
+/* ========================================================= */
+
+.mobile-menu{
+  display: none; /* standaard uit */
+  background: var(--panel);
+  border-top: 1px solid var(--border);
+}
+
+.mobile-menu ul{
+  list-style: none;
+  padding: 1rem;
+}
+
+.mobile-menu a{
+  display: block;
+  padding: .75rem 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text);
+  text-decoration: none;
+}
+
+/* alleen zichtbaar op mobiel */
+@media (max-width: 600px){
+  .mobile-menu{
+    display: none;
+  }
+
+  body.menu-open .mobile-menu{
+    display: block;
+  }
+}
 

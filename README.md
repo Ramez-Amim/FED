@@ -237,6 +237,6 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
   1. https://www.a11yproject.com/posts/how-to-hide-content/ - om iets hidden te maken
   2. https://chromewebstore.google.com/detail/image-downloader/cnpniohnfphhjihaiiggeabnkjhpaldj - om afbeeldingen van de website te downloaden
   3. Ai gebruikt om de code mooi te laten inspringen met de prompt: "kun je deze code mooi laten inspringen ik heb hier moeite mee"
-  
+  4. Ai gebruikt om de juiste selectoren te vinden voor de css met de prompt: hoe kun ik dit uit de html stijlen in mijn css
 
 </details>
