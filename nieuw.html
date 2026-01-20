@@ -5,21 +5,22 @@
     <meta name="author" content="Ramez Amim" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Nike | Nieuwe Releases</title>
-    <link rel="stylesheet" href="style.css" />
-    <link rel="icon" href="images/nikelogo.png" />
+
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="icon" href="./images/nikelogo.png" />
   </head>
 
   <body class="releases">
     <!-- =============================================== -->
-    <!-- HEADER / NAV (zelfde als pagina 1)            -->
+    <!-- HEADER / NAV (zelfde als pagina 1)               -->
     <!-- =============================================== -->
     <header>
-      <nav>
+      <nav aria-label="Hoofdmenu">
         <ul class="nav">
           <!-- LOGO -->
           <li class="nav-logo">
-            <a href="index.html">
-              <img src="images/nikelogo.png" alt="Nike Logo" />
+            <a href="./index.html">
+              <img src="./images/nikelogo.png" alt="Nike Logo" />
             </a>
           </li>
 
@@ -27,11 +28,11 @@
           <li class="nav-center">
             <ul class="nav-links">
               <li class="has-dropdown">
-                <a href="nieuw.html">Nieuw</a>
+                <a href="./nieuw.html">Nieuw</a>
 
                 <!-- DROPDOWN -->
                 <ul class="dropdown">
-                  <li><a href="nieuw.html">Shop alle nieuwe producten</a></li>
+                  <li><a href="./nieuw.html">Shop alle nieuwe producten</a></li>
                   <li><a href="#">Bestsellers</a></li>
                   <li><a href="#">Introductiekalender SNKRS</a></li>
                   <li><a href="#">Beste voor de winter</a></li>
@@ -42,20 +43,20 @@
 
           <!-- ICONS RECHTS -->
           <li class="nav-icons">
-            <button aria-label="Zoeken">
-              <img src="images/zoekicoon.png" alt="zoekicoon" />
+            <button aria-label="Zoeken" type="button">
+              <img src="./images/zoekicoon.png" alt="zoekicoon" />
             </button>
 
-            <a href="account.html" aria-label="Account">
-              <img src="images/accounticoon.png" alt="accounticoon" />
+            <a href="./account.html" aria-label="Account">
+              <img src="./images/accounticoon.png" alt="accounticoon" />
             </a>
 
-            <a href="winkelmandje.html" aria-label="Winkelmandje">
-              <img src="images/winkelmandjeicoon.png" alt="winkelmandjeicoon" />
+            <a href="./winkelmandje.html" aria-label="Winkelmandje">
+              <img src="./images/winkelmandjeicoon.png" alt="winkelmandjeicoon" />
             </a>
 
-            <button aria-label="Menu">
-              <img src="images/hamburgermenu.png" alt="hamburgermenuicoon" />
+            <button aria-label="Menu" type="button">
+              <img src="./images/hamburgermenu.png" alt="hamburgermenuicoon" />
             </button>
           </li>
         </ul>
@@ -63,19 +64,17 @@
     </header>
 
     <!-- =============================================== -->
-    <!-- SUBNAV (grijze balk onder de nav)             -->
+    <!-- SUBNAV (grijze balk onder de nav)               -->
     <!-- =============================================== -->
     <section class="subnav">
       <p>Shop alle nieuwe producten</p>
     </section>
 
     <!-- =============================================== -->
-    <!-- MAIN                                          -->
+    <!-- MAIN                                            -->
     <!-- =============================================== -->
     <main>
-      <!-- =========================================== -->
-      <!-- TOPBAR                                     -->
-      <!-- =========================================== -->
+      <!-- TOPBAR -->
       <section class="releases-top">
         <div>
           <h1>Nieuwe releases</h1>
@@ -87,9 +86,7 @@
         </div>
       </section>
 
-      <!-- =========================================== -->
-      <!-- LAYOUT: FILTERS + PRODUCTEN               -->
-      <!-- =========================================== -->
+      <!-- LAYOUT: FILTERS + PRODUCTEN -->
       <section class="releases-layout">
         <!-- FILTERS -->
         <aside id="filters" aria-label="Filters">
@@ -99,7 +96,7 @@
           <ul>
             <li><button type="button">Schoenen</button></li>
             <li><button type="button">Tops en T-shirts</button></li>
-            <li><button type="button">Broeken & tights</button></li>
+            <li><button type="button">Broeken &amp; tights</button></li>
             <li><button type="button">Accessoires en gear</button></li>
             <li><button type="button">Jassen en bodywarmers</button></li>
             <li><button type="button">Hoodies en sweatshirts</button></li>
@@ -108,7 +105,7 @@
             <li><button type="button">Sokken</button></li>
           </ul>
 
-          <!-- UITKLAPFILTERS (DETAILS / SUMMARY) -->
+          <!-- UITKLAPFILTERS -->
           <details>
             <summary>Geslacht</summary>
             <ul>
@@ -139,7 +136,7 @@
           <article>
             <a href="#">
               <img
-                src="images/AIR+JORDAN+5+RETRO+OG.jpeg"
+                src="./images/AIR+JORDAN+5+RETRO+OG.jpeg"
                 alt="Air Jordan 5 Retro Medium Soft Pink"
               />
               <h2>Air Jordan 5 Retro OG</h2>
@@ -153,7 +150,7 @@
           <article>
             <a href="#">
               <img
-                src="images/NIKE+AIR+MAX+95+BIG+BUBBLE.jpeg"
+                src="./images/NIKE+AIR+MAX+95+BIG+BUBBLE.jpeg"
                 alt="Nike Air Max 95 Big Bubble"
               />
               <h2>Nike Air Max 95 Big Bubble</h2>
@@ -166,7 +163,7 @@
 
           <article>
             <a href="#">
-              <img src="images/sportshirt.jpeg" alt="Nike sportshirt met print" />
+              <img src="./images/sportshirt.jpeg" alt="Nike sportshirt met print" />
               <h2>Nike Dri-FIT T-shirt</h2>
             </a>
 
@@ -177,9 +174,7 @@
         </section>
       </section>
 
-      <!-- =========================================== -->
-      <!-- GERELATEERD                              -->
-      <!-- =========================================== -->
+      <!-- GERELATEERD -->
       <section class="related">
         <h2>Gerelateerde categorieën</h2>
 
@@ -195,12 +190,11 @@
     </main>
 
     <!-- =============================================== -->
-    <!-- FOOTER (zelfde als pagina 1)                  -->
+    <!-- FOOTER (zelfde als pagina 1)                    -->
     <!-- =============================================== -->
     <footer>
-      <!-- FOOTER LINKS BLOK -->
       <section>
-        <button>Bronnen</button>
+        <button type="button">Bronnen</button>
         <ul>
           <li><a href="#">Cadeaubonnen</a></li>
           <li><a href="#">Zakelijke cadeaubonnen</a></li>
@@ -213,7 +207,7 @@
           <li><a href="#">Running Shoe Finder</a></li>
         </ul>
 
-        <button>Hulp</button>
+        <button type="button">Hulp</button>
         <ul>
           <li><a href="#">Over Nike</a></li>
           <li><a href="#">Nieuws</a></li>
@@ -226,7 +220,7 @@
           <li><a href="#">Een kwestie melden</a></li>
         </ul>
 
-        <button>Bedrijf</button>
+        <button type="button">Bedrijf</button>
         <ul>
           <li><a href="#">Over Nike</a></li>
           <li><a href="#">Nieuws</a></li>
@@ -239,7 +233,7 @@
           <li><a href="#">Een kwestie melden</a></li>
         </ul>
 
-        <button>Communitykortingen</button>
+        <button type="button">Communitykortingen</button>
         <ul>
           <li><a href="#">Student</a></li>
           <li><a href="#">Docent</a></li>
@@ -248,24 +242,21 @@
         </ul>
       </section>
 
-      <!-- FOOTER ONDERSTE RIJ -->
       <section>
         <p>© 2025 Nike, Inc. Alle rechten voorbehouden</p>
 
         <ul>
-          <li><a href="handleidingen.html">Handleidingen</a></li>
-          <li><a href="gebruiksvoorwaarden.html">Gebruiksvoorwaarden</a></li>
-          <li><a href="verkoopvoorwaarden.html">Verkoopvoorwaarden</a></li>
-          <li><a href="bedrijfsgegevens.html">Bedrijfsgegevens</a></li>
-          <li><a href="privacybeleid.html">Privacy- en cookiebeleid</a></li>
+          <li><a href="./handleidingen.html">Handleidingen</a></li>
+          <li><a href="./gebruiksvoorwaarden.html">Gebruiksvoorwaarden</a></li>
+          <li><a href="./verkoopvoorwaarden.html">Verkoopvoorwaarden</a></li>
+          <li><a href="./bedrijfsgegevens.html">Bedrijfsgegevens</a></li>
+          <li><a href="./privacybeleid.html">Privacy- en cookiebeleid</a></li>
           <li><a href="#">Privacy- en cookie-instellingen</a></li>
         </ul>
       </section>
     </footer>
 
-    <!-- =============================================== -->
-    <!-- SCRIPT                                         -->
-    <!-- =============================================== -->
-    <script defer src="script.js"></script>
+    <!-- SCRIPT -->
+    <script src="./script.js"></script>
   </body>
 </html>

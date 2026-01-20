@@ -5,21 +5,22 @@
     <meta name="author" content="Ramez Amim" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Nike | Officiële Website</title>
-    <link rel="stylesheet" href="style.css" />
-    <link rel="icon" href="images/nikelogo.png" />
+
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="icon" href="./images/nikelogo.png" />
   </head>
 
   <body data-theme="dark">
     <!-- =============================================== -->
-    <!-- HEADER / NAV                                 -->
+    <!-- HEADER / NAV                                     -->
     <!-- =============================================== -->
     <header>
-      <nav>
+      <nav aria-label="Hoofdmenu">
         <ul class="nav">
           <!-- LOGO -->
           <li class="nav-logo">
-            <a href="index.html">
-              <img src="images/nikelogo.png" alt="Nike Logo" />
+            <a href="./index.html">
+              <img src="./images/nikelogo.png" alt="Nike Logo" />
             </a>
           </li>
 
@@ -27,11 +28,11 @@
           <li class="nav-center">
             <ul class="nav-links">
               <li class="has-dropdown">
-                <a href="nieuw.html">Nieuw</a>
+                <a href="./nieuw.html">Nieuw</a>
 
                 <!-- DROPDOWN -->
                 <ul class="dropdown">
-                  <li><a href="nieuw.html">Shop alle nieuwe producten</a></li>
+                  <li><a href="./nieuw.html">Shop alle nieuwe producten</a></li>
                   <li><a href="#">Bestsellers</a></li>
                   <li><a href="#">Introductiekalender SNKRS</a></li>
                   <li><a href="#">Beste voor de winter</a></li>
@@ -42,48 +43,51 @@
 
           <!-- THEME TOGGLE BUTTON -->
           <li class="nav-theme">
-            <button id="theme-toggle" aria-label="Toggle dark mode">🌙</button>
+            <button id="theme-toggle" aria-label="Toggle dark mode" type="button">🌙</button>
           </li>
 
           <!-- ICONS RECHTS -->
           <li class="nav-icons">
-            <button aria-label="Zoeken">
-              <img src="images/zoekicoon.png" alt="zoekicoon" />
+            <button aria-label="Zoeken" type="button">
+              <img src="./images/zoekicoon.png" alt="zoekicoon" />
             </button>
 
-            <a href="index.html" aria-label="Account">
-              <img src="images/accounticoon.png" alt="accounticoon" />
+            <a href="./index.html" aria-label="Account">
+              <img src="./images/accounticoon.png" alt="accounticoon" />
             </a>
 
-            <a href="index.html" aria-label="Winkelmandje">
-              <img src="images/winkelmandjeicoon.png" alt="winkelmandjeicoon" />
+            <a href="./index.html" aria-label="Winkelmandje">
+              <img src="./images/winkelmandjeicoon.png" alt="winkelmandjeicoon" />
             </a>
 
-              <button id="menu-toggle" type="button" aria-label="Menu" aria-expanded="false">
-                <img src="images/hamburgermenu.png" alt="hamburgermenuicoon" />
-              </button>
-
+            <button
+              id="menu-toggle"
+              type="button"
+              aria-label="Menu"
+              aria-expanded="false"
+            >
+              <img src="./images/hamburgermenu.png" alt="hamburgermenuicoon" />
+            </button>
           </li>
         </ul>
       </nav>
-      <!-- 👇 MOBIEL MENU (HIER!) -->
+
+      <!-- MOBIEL MENU -->
       <nav class="mobile-menu" aria-label="Mobiel menu" hidden>
         <ul>
-          <li><a href="nieuw.html">Nieuw</a></li>
+          <li><a href="./nieuw.html">Nieuw</a></li>
         </ul>
-    </nav>
-  </header>
+      </nav>
+    </header>
 
     <!-- =============================================== -->
-    <!-- MAIN                                          -->
+    <!-- MAIN                                             -->
     <!-- =============================================== -->
     <main>
-      <!-- =========================================== -->
-      <!-- HERO (VIDEO)                              -->
-      <!-- =========================================== -->
+      <!-- HERO (VIDEO) -->
       <section id="hero">
         <video autoplay muted loop playsinline>
-          <source src="images/homevid.mp4" type="video/mp4" />
+          <source src="./images/homevid.mp4" type="video/mp4" />
         </video>
 
         <h1>Home Pagina Nike</h1>
@@ -91,53 +95,49 @@
         <p>Geef je favoriete atleten de gear om volgend jaar hun records te verbreken.</p>
 
         <ul>
-          <li><a href="index.html">Shop</a></li>
-          <li><a href="index.html">Bekijk</a></li>
+          <li><a href="./index.html">Shop</a></li>
+          <li><a href="./index.html">Bekijk</a></li>
         </ul>
 
-        <button>⏸</button>
+        <button type="button">⏸</button>
       </section>
 
-      <!-- =========================================== -->
-      <!-- BANNERS                                   -->
-      <!-- =========================================== -->
+      <!-- BANNERS -->
       <div id="banners">
         <section>
-          <img src="images/shopheren.jpg" alt="Man in trainingspak met Nike Airmax" />
+          <img src="./images/shopheren.jpg" alt="Man in trainingspak met Nike Airmax" />
           <h2>Nieuw: Mannen items</h2>
           <h3>Niets te bewijzen</h3>
-          <a href="index.html">Shop</a>
+          <a href="./index.html">Shop</a>
         </section>
 
         <section>
-          <img src="images/shopdames.jpg" alt="Foto van Dame in trainingspak" />
+          <img src="./images/shopdames.jpg" alt="Foto van Dame in trainingspak" />
           <h2>Nieuw: Vrouwen items</h2>
           <h3>Niets te bewijzen</h3>
-          <a href="index.html">Shop</a>
+          <a href="./index.html">Shop</a>
         </section>
 
         <section>
-          <img src="images/shopkinderen.jpg" alt="Meisje met winterkleren" />
+          <img src="./images/shopkinderen.jpg" alt="Meisje met winterkleren" />
           <h2>Nieuw: Kids items</h2>
           <h3>Niets te bewijzen</h3>
-          <a href="index.html">Shop</a>
+          <a href="./index.html">Shop</a>
         </section>
 
         <section>
-          <img src="images/sportessentials.jpeg" alt="Vrouw met sportkleren die rent" />
+          <img src="./images/sportessentials.jpeg" alt="Vrouw met sportkleren die rent" />
           <h2>Nieuw: Sportessentials</h2>
           <h3>Niets te bewijzen</h3>
-          <a href="index.html">Shop</a>
+          <a href="./index.html">Shop</a>
         </section>
       </div>
 
-      <!-- =========================================== -->
-      <!-- LINKS SECTION (UITKLAP LIJSTEN)           -->
-      <!-- =========================================== -->
+      <!-- LINKS SECTION (UITKLAP LIJSTEN) -->
       <section id="links">
         <ul>
           <li>
-            <button>Schoenen</button>
+            <button type="button">Schoenen</button>
             <ul>
               <li><a href="#">Zwarte hardloopschoenen</a></li>
               <li><a href="#">Witte hardloopschoenen</a></li>
@@ -147,7 +147,7 @@
           </li>
 
           <li>
-            <button>Kleding</button>
+            <button type="button">Kleding</button>
             <ul>
               <li><a href="#">Yogabroeken</a></li>
               <li><a href="#">Tech Fleece Joggers</a></li>
@@ -157,7 +157,7 @@
           </li>
 
           <li>
-            <button>Kids</button>
+            <button type="button">Kids</button>
             <ul>
               <li><a href="#">Zwarte meisjesschoenen</a></li>
               <li><a href="#">Zwarte kinderschoenen</a></li>
@@ -165,7 +165,7 @@
           </li>
 
           <li>
-            <button>Uitgelicht</button>
+            <button type="button">Uitgelicht</button>
             <ul>
               <li><a href="#">Voetbalclubteams</a></li>
               <li><a href="#">Voetbal</a></li>
@@ -178,12 +178,11 @@
     </main>
 
     <!-- =============================================== -->
-    <!-- FOOTER                                        -->
+    <!-- FOOTER                                           -->
     <!-- =============================================== -->
     <footer>
-      <!-- FOOTER LINKS BLOK -->
       <section>
-        <button>Bronnen</button>
+        <button type="button">Bronnen</button>
         <ul>
           <li><a href="#">Cadeaubonnen</a></li>
           <li><a href="#">Zakelijke cadeaubonnen</a></li>
@@ -196,7 +195,7 @@
           <li><a href="#">Running Shoe Finder</a></li>
         </ul>
 
-        <button>Hulp</button>
+        <button type="button">Hulp</button>
         <ul>
           <li><a href="#">Over Nike</a></li>
           <li><a href="#">Nieuws</a></li>
@@ -209,7 +208,7 @@
           <li><a href="#">Een kwestie melden</a></li>
         </ul>
 
-        <button>Bedrijf</button>
+        <button type="button">Bedrijf</button>
         <ul>
           <li><a href="#">Over Nike</a></li>
           <li><a href="#">Nieuws</a></li>
@@ -222,7 +221,7 @@
           <li><a href="#">Een kwestie melden</a></li>
         </ul>
 
-        <button>Communitykortingen</button>
+        <button type="button">Communitykortingen</button>
         <ul>
           <li><a href="#">Student</a></li>
           <li><a href="#">Docent</a></li>
@@ -231,24 +230,21 @@
         </ul>
       </section>
 
-      <!-- FOOTER ONDERSTE RIJ -->
       <section>
         <p>© 2025 Nike, Inc. Alle rechten voorbehouden</p>
 
         <ul>
-          <li><a href="handleidingen.html">Handleidingen</a></li>
-          <li><a href="gebruiksvoorwaarden.html">Gebruiksvoorwaarden</a></li>
-          <li><a href="verkoopvoorwaarden.html">Verkoopvoorwaarden</a></li>
-          <li><a href="bedrijfsgegevens.html">Bedrijfsgegevens</a></li>
-          <li><a href="privacybeleid.html">Privacy- en cookiebeleid</a></li>
+          <li><a href="./handleidingen.html">Handleidingen</a></li>
+          <li><a href="./gebruiksvoorwaarden.html">Gebruiksvoorwaarden</a></li>
+          <li><a href="./verkoopvoorwaarden.html">Verkoopvoorwaarden</a></li>
+          <li><a href="./bedrijfsgegevens.html">Bedrijfsgegevens</a></li>
+          <li><a href="./privacybeleid.html">Privacy- en cookiebeleid</a></li>
           <li><a href="#">Privacy- en cookie-instellingen</a></li>
         </ul>
       </section>
     </footer>
 
-    <!-- =============================================== -->
-    <!-- SCRIPT                                         -->
-    <!-- =============================================== -->
-    <script defer src="script.js"></script>
+    <!-- SCRIPT -->
+    <script src="./script.js"></script>
   </body>
 </html>
